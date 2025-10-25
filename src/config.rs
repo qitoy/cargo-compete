@@ -235,6 +235,8 @@ pub(crate) enum Edition {
     Edition2018,
     #[strum(serialize = "2021")]
     Edition2021,
+    #[strum(serialize = "2024")]
+    Edition2024,
 }
 
 fn deser_option_fromstr<'de, D, T>(deserializer: D) -> Result<Option<T>, D::Error>
