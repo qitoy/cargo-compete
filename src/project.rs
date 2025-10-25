@@ -1,13 +1,13 @@
 use crate::shell::Shell;
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use camino::{Utf8Path, Utf8PathBuf};
 use cargo_metadata as cm;
 use easy_ext::ext;
-use indexmap::{indexset, IndexMap};
+use indexmap::{IndexMap, indexset};
 use itertools::Itertools as _;
 use serde::{
-    de::{Deserializer, Error as _, IntoDeserializer},
     Deserialize,
+    de::{Deserializer, Error as _, IntoDeserializer},
 };
 use serde_json::json;
 use std::{

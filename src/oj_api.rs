@@ -1,10 +1,10 @@
 use crate::shell::Shell;
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use camino::Utf8Path;
 use itertools::Itertools as _;
 use serde::{
-    de::{DeserializeOwned, Error as _},
     Deserialize, Deserializer,
+    de::{DeserializeOwned, Error as _},
 };
 use std::{env, ffi::OsStr, path::Path};
 use url::Url;

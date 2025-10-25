@@ -5,14 +5,15 @@ use crate::{
     oj_api,
     project::{MetadataExt as _, PackageExt as _},
     shell::{ColorChoice, Shell},
-    web::{credentials, ATCODER_RUST_LANG_ID, CODEFORCES_RUST_LANG_ID, YUKICODER_RUST_LANG_ID},
+    web::{ATCODER_RUST_LANG_ID, CODEFORCES_RUST_LANG_ID, YUKICODER_RUST_LANG_ID, credentials},
 };
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use human_size::Size;
 use liquid::object;
 use prettytable::{
+    Row, Table,
     format::{FormatBuilder, LinePosition, LineSeparator},
-    row, Row, Table,
+    row,
 };
 use snowchains_core::web::{
     Atcoder, AtcoderSubmitCredentials, AtcoderWatchSubmissionsCredentials,

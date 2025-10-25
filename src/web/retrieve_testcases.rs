@@ -4,10 +4,10 @@ use crate::{
     shell::Shell,
     web::credentials,
 };
-use anyhow::{ensure, Context};
+use anyhow::{Context, ensure};
 use camino::{Utf8Path, Utf8PathBuf};
 use cargo_metadata as cm;
-use indexmap::{indexmap, IndexMap};
+use indexmap::{IndexMap, indexmap};
 use maplit::{btreemap, btreeset};
 use percent_encoding::PercentDecode;
 use snowchains_core::{

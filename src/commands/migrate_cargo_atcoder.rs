@@ -3,9 +3,9 @@ use crate::{
     shell::ColorChoice,
     web::ATCODER_RUST_LANG_ID,
 };
-use anyhow::{anyhow, Context as _};
+use anyhow::{Context as _, anyhow};
 use if_chain::if_chain;
-use ignore::{overrides::OverrideBuilder, WalkBuilder};
+use ignore::{WalkBuilder, overrides::OverrideBuilder};
 use itertools::Itertools as _;
 use snowchains_core::web::PlatformKind;
 use std::{

@@ -3,7 +3,7 @@ use crate::{
     shell::ColorChoice,
     web::credentials,
 };
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use indexmap::indexset;
 use snowchains_core::web::{
     Atcoder, AtcoderRetrieveSubmissionSummariesCredentials,

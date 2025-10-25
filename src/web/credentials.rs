@@ -1,5 +1,5 @@
 use crate::shell::Shell;
-use anyhow::{anyhow, Context as _};
+use anyhow::{Context as _, anyhow};
 use serde::{Deserialize, Serialize};
 use std::{cell::RefCell, env, path::PathBuf};
 

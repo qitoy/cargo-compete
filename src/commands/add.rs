@@ -4,7 +4,7 @@ use crate::{
     project::{MetadataExt as _, PackageExt as _},
     shell::ColorChoice,
 };
-use anyhow::{bail, ensure, Context as _};
+use anyhow::{Context as _, bail, ensure};
 use cargo_metadata as cm;
 use liquid::object;
 use maplit::{btreeset, hashmap};

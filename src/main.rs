@@ -2,10 +2,10 @@
 #![warn(rust_2018_idioms)]
 
 use anyhow::Context as _;
-use cargo_compete::{shell::Shell, Context, Opt};
+use cargo_compete::{Context, Opt, shell::Shell};
 use std::env;
-use structopt::clap;
 use structopt::StructOpt as _;
+use structopt::clap;
 use termcolor::{Color, ColorSpec, WriteColor};
 
 fn main() {

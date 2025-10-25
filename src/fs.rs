@@ -1,5 +1,5 @@
 use anyhow::Context as _;
-use serde::{de::DeserializeOwned, Serialize};
+use serde::{Serialize, de::DeserializeOwned};
 use std::path::{Path, PathBuf};
 
 pub(crate) fn read_to_string(path: impl AsRef<Path>) -> anyhow::Result<String> {

@@ -24,7 +24,7 @@ use crate::{
     shell::Shell,
 };
 use std::path::PathBuf;
-use structopt::{clap::AppSettings, StructOpt};
+use structopt::{StructOpt, clap::AppSettings};
 
 #[derive(StructOpt, Debug)]
 #[structopt(

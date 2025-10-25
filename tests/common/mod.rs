@@ -1,13 +1,13 @@
 use anyhow::Context as _;
-use cargo_compete::{shell::Shell, Opt};
-use ignore::{overrides::Override, WalkBuilder};
+use cargo_compete::{Opt, shell::Shell};
+use ignore::{WalkBuilder, overrides::Override};
 use serde_json::json;
 use std::{io::BufRead, path::Path};
 use structopt::StructOpt as _;
 
 #[cfg(feature = "__test_with_credentials")]
 pub fn atcoder_credentials() -> anyhow::Result<impl BufRead> {
-    use anyhow::{ensure, Context as _};
+    use anyhow::{Context as _, ensure};
     use std::{env, io::Cursor};
 
     let username =

@@ -34,7 +34,13 @@
       ];
 
       perSystem =
-        { config, self', pkgs, lib, ... }:
+        {
+          config,
+          self',
+          pkgs,
+          lib,
+          ...
+        }:
         {
           rust-project = {
             crates.cargo-compete = {
@@ -45,9 +51,9 @@
             };
             src = lib.cleanSourceWith {
               src = inputs.self;
-              filter = path: type:
-                config.rust-project.crane-lib.filterCargoSources path type
-                || lib.hasInfix "resources" path;
+              filter =
+                path: type:
+                config.rust-project.crane-lib.filterCargoSources path type || lib.hasInfix "resources" path;
             };
           };
           packages.default = self'.packages.cargo-compete;

@@ -3,7 +3,7 @@ use crate::{
     oj_api,
     shell::{ColorChoice, Shell},
 };
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use camino::{Utf8Path, Utf8PathBuf};
 use heck::KebabCase as _;
 use itertools::Itertools as _;

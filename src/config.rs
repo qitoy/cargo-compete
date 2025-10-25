@@ -1,5 +1,5 @@
 use crate::{project::PackageExt as _, shell::Shell};
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use camino::{Utf8Path, Utf8PathBuf};
 use cargo_metadata as cm;
 use derivative::Derivative;
@@ -7,7 +7,7 @@ use heck::KebabCase as _;
 use indexmap::indexset;
 use liquid::object;
 use maplit::btreemap;
-use serde::{de::Error as _, Deserialize, Deserializer};
+use serde::{Deserialize, Deserializer, de::Error as _};
 use snowchains_core::web::PlatformKind;
 use std::{
     collections::BTreeMap,
@@ -165,9 +165,9 @@ impl CargoCompeteConfig {
 
             let dependencies = match dependencies {
                 CargoCompeteConfigNewTemplateDependencies::Inline { content } => {
-                    content.parse::<toml_edit::Document>().with_context(|| {
-                        "could not parse the toml value in `new.template.dependencies.content`"
-                    })?
+                    content.parse::<toml_edit::Document>().with_context(
+                        || "could not parse the toml value in `new.template.dependencies.content`",
+                    )?
                 }
                 CargoCompeteConfigNewTemplateDependencies::ManifestFile { path } => {
                     let mut dependencies = toml_edit::Document::new();

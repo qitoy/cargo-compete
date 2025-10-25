@@ -1,5 +1,5 @@
 use crate::shell::Shell;
-use anyhow::{bail, Context as _};
+use anyhow::{Context as _, bail};
 use camino::Utf8Path;
 use git2::Repository;
 use serde_json::json;
@@ -44,9 +44,9 @@ pub(crate) fn open(
         })
         .to_string();
 
-        let jq = crate::process::which("jq", process_cwd).with_context(|| {
-            "`jq` not found. install `jq` from https://github.com/stedolan/jq/releases"
-        })?;
+        let jq = crate::process::which("jq", process_cwd).with_context(
+            || "`jq` not found. install `jq` from https://github.com/stedolan/jq/releases",
+        )?;
 
         let output = crate::process::process(jq)
             .args(&["-c", open.as_ref()])
